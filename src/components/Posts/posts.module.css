@@ -1,0 +1,53 @@
+.content {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.postsContainer {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.contentContainer {
+    display: grid;
+    padding-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tagsContainer {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    height: min-content;
+    padding: 30px;
+}
+
+.tag {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.tagLine {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.tagPrefix {
+    font-size: 30px;
+}
+
+.tagsHeader {
+    margin-bottom: 20px;
+}

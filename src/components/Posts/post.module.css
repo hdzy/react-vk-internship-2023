@@ -1,0 +1,75 @@
+.postContainer {
+    width: 700px;
+    height: 500px;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 140px 140px 50px 1fr 1fr 1fr;
+    grid-template-areas:
+    "image image image"
+    "image image image"
+    "user user date"
+    "title title title"
+    "tags tags tags"
+    "views views views";
+}
+
+.postContainer:hover {
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    box-shadow: rgba(29, 29, 94, 0.74) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.postTitle {
+    grid-area: title;
+    margin: 0;
+    height: fit-content;
+    align-self: center;
+    padding-left: 50px;
+}
+
+.postUserContainer {
+    grid-area: user;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.postUser {
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.userAvatar {
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tagsContainer {
+    grid-area: tags;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 50px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.date {
+    grid-area: date;
+    align-self: center;
+    justify-self: flex-end;
+    padding-right: 50px;
+}
