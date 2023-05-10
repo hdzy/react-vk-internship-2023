@@ -4,13 +4,17 @@ import styles from './register.module.css';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector } from "react-redux";
 import {fetchRegister, selectIsAuthenticated} from "../../slices/auth";
-import React, {useEffect} from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
+import axios from "../../axios";
+import {Avatar, Button, Paper, TextField, Typography} from "@mui/material";
 
 
 export const RegisterPage = () => {
 
     const isAuthenticated = useSelector(selectIsAuthenticated);
+    const [imageUrl, setImageUrl] = React.useState("");
+
 
     const {
         register,
@@ -26,6 +30,9 @@ export const RegisterPage = () => {
             city: '',
             email: '',
             password: '',
+        },
+        values: {
+            avatarUrl: imageUrl,
         },
         mode: "onSubmit",
     });
@@ -43,29 +50,93 @@ export const RegisterPage = () => {
     };
 
     if (isAuthenticated) {
-        return <Navigate to="/account" />
+        return <Navigate to="/" />
     }
 
+    const handleChangeFile = async (event: any) => {
+        try {
+            const formData = new FormData();
+            formData.append('image', event.target.files[0]);
+            const {data} = await axios.post('/upload', formData);
+            setImageUrl(data.url);
+        }
+        catch (error) {
+            console.log(error);
+            alert('Ошибка при загрузке файла');
+        }
+    };
+
     return (
-        <div className={styles.content}>
-            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-                <h2 className={styles.title}>Регистрация</h2>
-                <label className={styles.label} htmlFor={'nickname'}>Никнейм:</label>
-                <input className={styles.input} id={'nickname'} {...register('nickname', { required: "Укажите полное имя"})} />
-                <label className={styles.label} htmlFor={'name'}>Имя:</label>
-                <input className={styles.input} id={'name'} {...register('name', { required: "Укажите полное имя"})} />
-                <label className={styles.label} htmlFor={'surname'}>Фамилия:</label>
-                <input className={styles.input} id={'surname'} {...register('surname', { required: "Укажите полное имя"})} />
-                <label className={styles.label} htmlFor={'email'}>Почта:</label>
-                <input className={styles.input} id={'email'} {...register('email', { required: "Укажите почту"})} />
-                <label className={styles.label} htmlFor={'email'}>Пароль:</label>
-                <input className={styles.input} id={'password'} {...register('password', { required: "Укажите пароль" })} />
-                <label className={styles.label} htmlFor={'city'}>Город:</label>
-                <input className={styles.input} id={'city'} {...register('city', { required: "Укажите почту"})} />
-                <label className={styles.label} htmlFor={'education'}>Образование:</label>
-                <input className={styles.input} id={'education'} {...register('education', { required: "Укажите пароль" })} />
-                <button className={styles.button} type={'submit'}>Зарегистрироваться</button>
-            </form>
-        </div>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <Paper classes={{ root: styles.root }}>
+            <Typography classes={{ root: styles.title }} variant="h5">
+                Создание аккаунта
+            </Typography>
+            <div className={styles.avatar}>
+                <input id={'image'} type={"file"} onChange={handleChangeFile}/>
+            </div>
+            <TextField className={styles.field}
+                       label="Никнейм"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('nickname', {
+                           required: "Укажите E-Mail",
+                       })}
+                       fullWidth
+            />
+            <TextField className={styles.field}
+                       label="Имя"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('name', {
+                           required: "Укажите имя",
+                       })}
+                       fullWidth />
+            <TextField className={styles.field}
+                       label="Фамилия"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('surname', {
+                           required: "Укажите фамилию",
+                       })}
+                       fullWidth />
+            <TextField className={styles.field}
+                       label="Город"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('city', {
+                           required: "Укажите город",
+                       })}
+                       fullWidth />
+            <TextField className={styles.field}
+                       label="Образование"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('education', {
+                           required: "Укажите образование",
+                       })}
+                       fullWidth />
+            <TextField className={styles.field}
+                       label="Электронная почта"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('email', {
+                           required: "Укажите электронную почту",
+                           pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                       })}
+                       fullWidth />
+            <TextField className={styles.field}
+                       label="Пароль"
+                       error={Boolean(errors.nickname?.message)}
+                       helperText={"*обязательное поле"}
+                       {...register('password', {
+                           required: "Укажите пароль",
+                       })}
+                       fullWidth />
+            <Button classes={{root: styles.button}} type={"submit"} size="large" variant="contained" fullWidth>
+                Зарегистрироваться
+            </Button>
+        </Paper>
+        </form>
     );
 };

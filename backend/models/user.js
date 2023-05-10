@@ -32,6 +32,10 @@ export const UserSchema = new mongoose.Schema({
         required: true,
     },
     avatarUrl: String,
+    friends: {
+        type: Array,
+        default: [],
+    }
 },
     {
         timestamps: true,

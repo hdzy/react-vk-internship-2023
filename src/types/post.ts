@@ -1,9 +1,6 @@
-export interface IStateType {
-    posts: postType,
-    tags: Array<string>,
-}
 
 export type userType = {
+    avatarUrl: string | undefined;
     _id: number,
     nickname: string,
     name: string,

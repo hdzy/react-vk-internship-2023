@@ -2,7 +2,7 @@
     max-width: 1440px;
     width: 100%;
     padding-bottom: 20px;
-    margin: 50px auto;
+    margin: 30px auto 20px 390px;
     background-color: #fff;
     display: grid;
     row-gap: 15px;
@@ -47,7 +47,6 @@
 }
 
 .userAvatar {
-    background-color: #000;
     width: 30px;
     height: 30px;
     border-radius: 50%;

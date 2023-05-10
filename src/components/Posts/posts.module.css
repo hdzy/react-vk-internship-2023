@@ -1,7 +1,8 @@
 .content {
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
+    height: auto;
+    margin: 30px auto 20px 390px;
 }
 
 .postsContainer {
@@ -16,7 +17,6 @@
 
 .contentContainer {
     display: grid;
-    padding-top: 50px;
     grid-template-columns: repeat(3, 1fr);
 }
 

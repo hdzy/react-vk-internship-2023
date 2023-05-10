@@ -111,3 +111,88 @@ export const getUser = async (req, res) => {
         res.status(500).json('Не удалось получить пользователя');
     }
 }
+
+export const getUserPosts = async (req, res) => {
+    try {
+        const userID = req.params.id;
+
+        const user = await PostModel.find({user: userID});
+
+        res.json([...user]);
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json('Не удалось получить пользователя');
+    }
+}
+
+
+
+export const addFriend = async (req , res) => {
+    try {
+        const userID = await UserModel.findById(req.userID);
+        const friendID = await UserModel.findById(req.params.id);
+
+        if (!userID || !friendID) {
+            return res.status(404).json({errors: [{msg: 'No user found'}]});
+        }
+
+        userID.friends.push({
+            avatar: friendID.avatarUrl,
+            nickname: friendID.nickname,
+            id: friendID._id,
+        });
+
+        friendID.friends.push({
+            avatar: userID.avatarUrl,
+            nickname: userID.nickname,
+            id: userID._id,
+        });
+
+        userID.save();
+        friendID.save();
+
+        res.json({
+            success: true
+        });
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).send('Ошибка при авторизации');
+    }
+};
+export const removeFriend = async (req, res) => {
+    try {
+        const userID = await UserModel.findById(req.userID);
+        const friendID = await UserModel.findById(req.params.id);
+
+        if (!userID || !friendID) {
+            return res.status(404).json({errors: [{msg: 'No user found'}]});
+        }
+
+        userID.friends.remove({
+            avatar: friendID.avatarUrl,
+            nickname: friendID.nickname,
+            id: friendID._id,
+        });
+
+        friendID.friends.remove({
+            avatar: userID.avatarUrl,
+            nickname: userID.nickname,
+            id: userID._id,
+        });
+
+        userID.save();
+        friendID.save();
+
+        res.json({
+            success: true
+        });
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json('Не удалось получить пользователя');
+    }
+}

@@ -8,10 +8,9 @@ import 'easymde/dist/easymde.min.css';
 // @ts-ignore
 import styles from "./createPost.module.css";
 import {useSelector} from "react-redux";
-import {logout, selectIsAuthenticated} from "../../slices/auth";
+import {selectIsAuthenticated} from "../../slices/auth";
 import {Navigate, useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios";
-import {log} from "util";
 
 export const CreatePostPage = () => {
     const {id} = useParams();
@@ -20,7 +19,6 @@ export const CreatePostPage = () => {
 
     const isAuthenticated:any = useSelector(selectIsAuthenticated);
 
-    const [isLoading, setIsLoading] = React.useState(false);
     const [value, setValue] = React.useState('');
     const [title, setTitle] = React.useState('');
     const [tags, setTags] = React.useState('');
@@ -50,7 +48,6 @@ export const CreatePostPage = () => {
 
     const onSubmit = async () => {
         try {
-            setIsLoading(true);
             const tagsArray = tags.split(' ');
 
             const {data} = isEditing ? await axios.patch(`/posts/${id}`, {
@@ -64,7 +61,6 @@ export const CreatePostPage = () => {
                 tags: tagsArray,
                 imageUrl: imageUrl,
             });
-            setIsLoading(false);
             const _id = isEditing ? id : data._id;
 
             navigate(`/post/${_id}`);
@@ -139,7 +135,7 @@ export const CreatePostPage = () => {
                     placeholder="Заголовок статьи"
                     fullWidth
                 />
-                <TextField classes={{ root: styles.tags }} value={tags} onChange={(e) => setTags(e.target.value)} variant="standard" placeholder="Тэги" fullWidth />
+                <TextField classes={{ root: styles.tags }} value={tags} onChange={(e) => setTags(e.target.value)} variant="standard" placeholder="Теги" fullWidth />
                 <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
                 <div className={styles.buttons}>
                     <Button size="large" variant="contained" onClick={onSubmit}>

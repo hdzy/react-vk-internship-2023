@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
-import {AccountPage} from './components/Account/AccountPage';
-import {Header} from './components/Header/Header';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Sidebar} from './components/Sidebar/Sidebar';
 import {LoginPage} from './components/Login/LoginPage';
 import {CreatePostPage} from './components/CreatePost/CreatePostPage';
 // @ts-ignore
@@ -23,13 +22,11 @@ function App() {
 
     const isAuthenticated = useSelector(selectIsAuthenticated);
 
-
     return (
       <div className={styles.content}>
       <BrowserRouter>
-          <Header/>
+          <Sidebar/>
           <Routes>
-              <Route path={'/account'} element={<AccountPage/>}/>
               <Route path={'/login'} element={<LoginPage/>}/>
               <Route path={'/create'} element={<CreatePostPage/>}/>
               <Route path={'/posts'} element={<PostsPage/>}/>

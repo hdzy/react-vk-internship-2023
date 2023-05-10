@@ -1,6 +1,7 @@
 .content {
     width: 1440px;
-    margin: 0 auto;
+    height: auto;
+    margin: 30px auto 20px 390px;
     padding: 0 50px 30px 50px;
     background-color: #fff;
 }

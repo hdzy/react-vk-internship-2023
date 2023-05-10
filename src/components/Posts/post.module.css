@@ -1,9 +1,10 @@
 .postContainer {
     width: 700px;
     height: 500px;
-    color: #000;
+    color: #fff;
+    background: linear-gradient(131.58deg, #FA93D2 1.34%, #895FE0 103.94%);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
     display: grid;
     row-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -20,7 +21,7 @@
 .postContainer:hover {
     cursor: pointer;
     transition: box-shadow 0.5s;
-    box-shadow: rgba(29, 29, 94, 0.74) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(29, 29, 94, 0.74) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 
 .postTitle {
@@ -28,7 +29,7 @@
     margin: 0;
     height: fit-content;
     align-self: center;
-    padding-left: 50px;
+    padding-left: 30px;
 }
 
 .postUserContainer {
@@ -42,10 +43,10 @@
     padding-left: 10px;
     font-weight: 500;
     cursor: pointer;
+    color: #fff;
 }
 
 .userAvatar {
-    background-color: #000;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -64,8 +65,12 @@
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-    padding-left: 50px;
-    color: rgba(0, 0, 0, 0.5);
+    padding-left: 30px;
+    width: 80%;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .date {
