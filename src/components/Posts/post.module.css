@@ -41,6 +41,7 @@
 .postUser {
     padding-left: 10px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .userAvatar {

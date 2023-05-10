@@ -2,7 +2,15 @@ import mongoose from 'mongoose';
 
 
 export const UserSchema = new mongoose.Schema({
-    fullName: {
+    nickname: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    surname: {
         type: String,
         required: true,
     },
@@ -12,6 +20,14 @@ export const UserSchema = new mongoose.Schema({
         unique: true,
     },
     passwordHash: {
+        type: String,
+        required: true,
+    },
+    city: {
+        type: String,
+        required: true,
+    },
+    education: {
         type: String,
         required: true,
     },

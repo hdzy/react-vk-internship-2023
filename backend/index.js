@@ -38,7 +38,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.post('/register', UserController.register);
 app.post('/login', UserController.login);
-
+app.get('/users/:id', UserController.getUser);
 app.get('/auth/me', checkAuth, UserController.getMe);
 
 app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
@@ -52,7 +52,7 @@ app.get('/posts/tags', PostController.getAllTags);
 app.get('/posts/:id', PostController.getOne);
 app.post('/posts', checkAuth, postCreateValidation , PostController.create);
 app.patch('/posts/:id',checkAuth, postCreateValidation, PostController.update);
-app.delete('/posts',checkAuth , PostController.remove);
+app.delete('/posts/:id', checkAuth, PostController.remove);
 
 app.listen(3000, (err) => {
    if (err) console.log(err);

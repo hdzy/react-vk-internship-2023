@@ -3,6 +3,7 @@ import {validationResult} from "express-validator";
 import bcrypt from "bcryptjs";
 import UserModel from "../models/user.js";
 import jwt from "jsonwebtoken";
+import PostModel from "../models/post.js";
 
 export const register = async (req, res) => {
     try {
@@ -16,8 +17,12 @@ export const register = async (req, res) => {
         const passHash = await bcrypt.hash(password, salt);
 
         const doc = new UserModel({
+            name: req.body.name,
+            nickname: req.body.nickname,
+            surname: req.body.surname,
+            city: req.body.city,
+            education: req.body.education,
             email: req.body.email,
-            fullName: req.body.fullName,
             passwordHash: passHash,
             avatarUrl: req.body.avatarUrl,
         })
@@ -42,7 +47,7 @@ export const register = async (req, res) => {
         res.status(500).send('Ошибка при регистрации');
     }
 };
-export const login = async (req, res) => async (req, res) => {
+export const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({email: req.body.email});
 
@@ -82,7 +87,7 @@ export const getMe = async (req , res) => {
             return res.status(404).json({errors: [{msg: 'No user found'}]});
         }
 
-        const {passwordHash,...userDate} = user._doc;
+        const {passwordHash, ...userDate} = user._doc;
         res.json({...userDate});
     }
     catch (err) {
@@ -90,3 +95,19 @@ export const getMe = async (req , res) => {
         res.status(500).send('Ошибка при авторизации');
     }
 };
+
+export const getUser = async (req, res) => {
+    try {
+        const userID = req.params.id;
+
+        UserModel.findById(userID)
+            .then(user => {res.json(user)})
+            .catch(err => {
+                console.log(err)})
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json('Не удалось получить пользователя');
+    }
+}

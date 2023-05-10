@@ -5,7 +5,11 @@ export interface IStateType {
 
 export type userType = {
     _id: number,
-    fullName: string,
+    nickname: string,
+    name: string,
+    surname: string,
+    city: string,
+    education: string,
     email: string,
     passwordHash: string,
     createdAt: string,

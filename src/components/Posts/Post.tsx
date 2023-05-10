@@ -14,12 +14,18 @@ export const Post: FC<{post: postType}> = ({post}) => {
     return (
         <NavLink style={{ textDecoration: 'none' }} to={'/post/'+post._id} className={styles.postContainer}>
             <PostTitle>{post.title}</PostTitle>
-            <PostUser username={post.user.fullName}/>
+            <PostUser username={post.user?.nickname} userID={post.user?._id}/>
             <img
                 className={styles.image}
-                src={"https://catherineasquithgallery.com/uploads/posts/2021-03/1614612233_137-p-fon-dlya-fotoshopa-priroda-209.jpg"
-            }/>
-            <PostTags tags={post.tags}/>
+                src= {
+                    !post?.imageUrl
+                        ?
+                        "https://catherineasquithgallery.com/uploads/posts/2021-03/1614612233_137-p-fon-dlya-fotoshopa-priroda-209.jpg"
+                        :
+                        `http://localhost:3000${post?.imageUrl}`
+                }
+            />
+            <PostTags tags={post.tags} key={post.toString()}/>
             <PostDate>{post.createdAt}</PostDate>
         </NavLink>
     );

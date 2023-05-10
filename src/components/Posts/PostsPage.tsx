@@ -11,6 +11,8 @@ import {Post} from "./Post";
 
 import { RootState } from "../../redux/store";
 import {postType} from "../../types/post";
+import {selectIsAuthenticated} from "../../slices/auth";
+import {Navigate} from "react-router-dom";
 
 export const PostsPage = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
@@ -21,6 +23,12 @@ export const PostsPage = () => {
         dispatch(fetchPosts());
         dispatch(fetchTags());
     }, [])
+
+    const isAuthenticated = useSelector(selectIsAuthenticated);
+
+    if (!isAuthenticated) {
+        return <Navigate to="/login" />
+    }
 
     return (
         <div className={styles.content}>

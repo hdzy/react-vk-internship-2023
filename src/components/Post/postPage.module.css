@@ -15,7 +15,7 @@
     "title title title"
     "content content content"
     "tags tags tags"
-    "views views views";
+    "views edit edit";
 }
 
 .image {
@@ -77,4 +77,26 @@
 .views {
     grid-area: views;
     padding-left: 50px;
+}
+
+.edit {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.delete {
+    color: #da2d2d;
+    cursor: pointer;
+}
+
+.edit:hover, .delete:hover {
+    text-shadow: 0 0 25px #000000;
+}
+
+.postFooter {
+    grid-area: edit;
+    display: none;
+    margin-right: 50px;
+    gap: 30px;
+    margin-left: auto;
 }

@@ -1,0 +1,49 @@
+.content {
+    width: 1440px;
+    height: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 300px 1fr;
+    grid-template-areas:
+        "header header header"
+        "avatar info friends"
+        "posts posts posts";
+    row-gap: 30px;
+}
+
+.title {
+    grid-area: header;
+    margin: auto auto auto 0;
+}
+
+.avatar {
+    grid-area: avatar;
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+}
+
+.infoContainer {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info {
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+}
+
+.friendsContainer {
+    grid-area: friends;
+}
+
+.postsContainer {
+    grid-area: posts;
+    margin-top: 50px;
+}
