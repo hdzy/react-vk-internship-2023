@@ -4,55 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23467de5-bf96-4e6a-84f9-6e549cc9dbdc" name="Changes" comment="Start project: &#10;&#10;Backend:&#10;&#10;User, Posts, Login, Register&#10;&#10;Front: &#10;&#10;Posts, Login [50%]">
-      <change afterPath="L:/react-internship/src/components/Sidebar/Logo.svg" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/Sidebar/NavLinks.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/User/Friend.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/User/FriendsInfo.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/User/PostInfoPost.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/User/PostsInfo.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/src/components/User/UserInfo.tsx" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683704850191prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683705040695prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683705599239prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683705637524prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683705683594prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683709797646prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683719036633prizyv_tsyryly.gif" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/168372658082020230109_170626.jpg" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683731908898Ð¼Ð°ÐºÑÐ¾Ñ1.png" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683731984496ÐÐµÐ· 3131311.jpg" afterDir="false" />
-      <change afterPath="L:/react-internship/uploads/1683737694264prizyv_tsyryly.gif" afterDir="false" />
-      <change beforePath="L:/react-internship/.idea/workspace.xml" beforeDir="false" afterPath="L:/react-internship/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="L:/react-internship/backend/controllers/UserController.js" beforeDir="false" afterPath="L:/react-internship/backend/controllers/UserController.js" afterDir="false" />
-      <change beforePath="L:/react-internship/backend/index.js" beforeDir="false" afterPath="L:/react-internship/backend/index.js" afterDir="false" />
-      <change beforePath="L:/react-internship/backend/models/user.js" beforeDir="false" afterPath="L:/react-internship/backend/models/user.js" afterDir="false" />
-      <change beforePath="L:/react-internship/backend/validations/auth.js" beforeDir="false" afterPath="L:/react-internship/backend/validations/auth.js" afterDir="false" />
-      <change beforePath="L:/react-internship/package-lock.json" beforeDir="false" afterPath="L:/react-internship/package-lock.json" afterDir="false" />
-      <change beforePath="L:/react-internship/package.json" beforeDir="false" afterPath="L:/react-internship/package.json" afterDir="false" />
-      <change beforePath="L:/react-internship/src/App.tsx" beforeDir="false" afterPath="L:/react-internship/src/App.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/CreatePost/CreatePostPage.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/CreatePost/CreatePostPage.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/CreatePost/createPost.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/CreatePost/createPost.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Post/PostPage.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Post/PostPage.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Post/postPage.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/Post/postPage.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/Post.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/Post.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/PostTags.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/PostTags.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/PostUser.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/PostUser.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/PostsPage.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/PostsPage.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/post.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/post.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Posts/posts.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/Posts/posts.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Register/RegisterPage.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/Register/RegisterPage.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/Register/register.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/Register/register.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/User/UserPage.tsx" beforeDir="false" afterPath="L:/react-internship/src/components/User/UserPage.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/components/User/userPage.module.css" beforeDir="false" afterPath="L:/react-internship/src/components/User/userPage.module.css" afterDir="false" />
-      <change beforePath="L:/react-internship/src/redux/store.tsx" beforeDir="false" afterPath="L:/react-internship/src/redux/store.tsx" afterDir="false" />
-      <change beforePath="L:/react-internship/src/slices/posts.js" beforeDir="false" afterPath="L:/react-internship/src/slices/posts.js" afterDir="false" />
-      <change beforePath="L:/react-internship/src/slices/user.js" beforeDir="false" afterPath="L:/react-internship/src/slices/user.js" afterDir="false" />
-      <change beforePath="L:/react-internship/src/types/post.ts" beforeDir="false" afterPath="L:/react-internship/src/types/post.ts" afterDir="false" />
-      <change beforePath="L:/react-internship/uploads/1683699973280prizyv_tsyryly.gif" beforeDir="false" afterPath="L:/react-internship/uploads/1683704414075prizyv_tsyryly.gif" afterDir="false" />
-      <change beforePath="L:/react-internship/uploads/1683701515160prizyv_tsyryly.gif" beforeDir="false" afterPath="L:/react-internship/uploads/1683704672883prizyv_tsyryly.gif" afterDir="false" />
-      <change beforePath="L:/react-internship/uploads/1683702308779prizyv_tsyryly.gif" beforeDir="false" afterPath="L:/react-internship/uploads/1683704757102prizyv_tsyryly.gif" afterDir="false" />
-    </list>
+    <list default="true" id="23467de5-bf96-4e6a-84f9-6e549cc9dbdc" name="Changes" comment="Fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +111,7 @@
       <workItem from="1683634789838" duration="3461000" />
       <workItem from="1683641816365" duration="15669000" />
       <workItem from="1683661879662" duration="4448000" />
-      <workItem from="1683699562085" duration="37515000" />
+      <workItem from="1683699562085" duration="37815000" />
     </task>
     <task id="LOCAL-00001" summary="Start project: &#10;&#10;Backend:&#10;&#10;User, Posts, Login, Register&#10;&#10;Front: &#10;&#10;Posts, Login [50%]">
       <created>1683335235274</created>
@@ -175,7 +127,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683702667323</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Start project: &#10;&#10;Backend:&#10;&#10;User, Posts, Login, Register&#10;&#10;Front: &#10;&#10;Posts, Login [50%]">
+      <created>1683744333291</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683744333291</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix">
+      <created>1683744427111</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683744427111</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start project: &#10;&#10;Backend:&#10;&#10;User, Posts, Login, Register&#10;&#10;Front: &#10;&#10;Posts, Login [50%]" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start project: &#10;&#10;Backend:&#10;&#10;User, Posts, Login, Register&#10;&#10;Front: &#10;&#10;Posts, Login [50%]" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
 </project>
