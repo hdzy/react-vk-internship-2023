@@ -4,7 +4,7 @@ import {Sidebar} from './components/Sidebar/Sidebar';
 import {LoginPage} from './components/Login/LoginPage';
 import {CreatePostPage} from './components/CreatePost/CreatePostPage';
 // @ts-ignore
-import styles from './App.css';
+import styles from './App.module.css';
 import {PostsPage} from "./components/Posts/PostsPage";
 import {PostPage} from "./components/Post/PostPage";
 import {RegisterPage} from "./components/Register/RegisterPage";
